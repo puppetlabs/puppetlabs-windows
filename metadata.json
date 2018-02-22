@@ -13,7 +13,7 @@
     {"name":"puppetlabs/dsc","version_requirement":"1.x"},
     {"name":"puppetlabs/iis","version_requirement":"4.x"},
     {"name":"puppetlabs/powershell","version_requirement":">= 1.0.0 < 3.0.0"},
-    {"name":"puppetlabs/reboot","version_requirement":"1.x"},
+    {"name":"puppetlabs/reboot","version_requirement":">= 1.0.0 < 3.x"},
     {"name":"puppetlabs/registry","version_requirement":"1.x"},
     {"name":"puppetlabs/wsus_client","version_requirement":"1.x"},
     {"name":"puppet/download_file","version_requirement":">= 1.0.0 < 3.0.0"},
