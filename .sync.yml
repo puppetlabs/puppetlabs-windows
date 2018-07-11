@@ -3,7 +3,7 @@ appveyor.yml:
   unmanaged: true
 .travis.yml:
   unmanaged: true
-NOTICE:
-  copyright_holders:
-    - name: 'Puppet, Inc.'
-      begin: 2014
+
+Rakefile:
+  requires:
+    - puppet-lint/tasks/puppet-lint
