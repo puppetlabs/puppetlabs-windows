@@ -8,17 +8,50 @@
   "project_page": "https://github.com/puppetlabs/puppetlabs-windows",
   "issues_url": "https://tickets.puppet.com/browse/MODULES",
   "dependencies": [
-    {"name":"puppetlabs/acl","version_requirement":">= 1.0.0 < 2.0.0"},
-    {"name":"puppetlabs/chocolatey","version_requirement":">= 2.0.0 < 3.0.0"},
-    {"name":"puppetlabs/dsc","version_requirement":">= 1.0.0 < 2.0.0"},
-    {"name":"puppetlabs/iis","version_requirement":">= 4.0.0 < 5.0.0"},
-    {"name":"puppetlabs/powershell","version_requirement":">= 1.0.0 < 3.0.0"},
-    {"name":"puppetlabs/reboot","version_requirement":">= 1.0.0 < 3.0.0"},
-    {"name":"puppetlabs/registry","version_requirement":">= 1.0.0 < 2.0.0"},
-    {"name":"puppetlabs/wsus_client","version_requirement":">= 1.0.0 < 2.0.0"},
-    {"name":"puppet/download_file","version_requirement":">= 1.0.0 < 3.0.0"},
-    {"name":"puppet/windows_env","version_requirement":">= 2.0.0 < 3.0.0"},
-    {"name":"puppet/windowsfeature","version_requirement":">= 1.0.0 < 3.0.0"}
+    {
+      "name": "puppetlabs/acl",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "puppetlabs/chocolatey",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/dsc",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "puppetlabs/iis",
+      "version_requirement": ">= 4.0.0 < 5.0.0"
+    },
+    {
+      "name": "puppetlabs/powershell",
+      "version_requirement": ">= 1.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/reboot",
+      "version_requirement": ">= 1.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppetlabs/registry",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "puppetlabs/wsus_client",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
+    {
+      "name": "puppet/download_file",
+      "version_requirement": ">= 1.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppet/windows_env",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "puppet/windowsfeature",
+      "version_requirement": ">= 1.0.0 < 3.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
@@ -39,6 +72,9 @@
     {
       "name": "puppet",
       "version_requirement": ">= 3.7.0 < 5.0.0"
-   }
-  ]
+    }
+  ],
+  "pdk-version": "1.6.0",
+  "template-url": "file://C:/Program Files/Puppet Labs/DevelopmentKit/share/cache/pdk-templates.git",
+  "template-ref": "1.6.0-0-gf5564c0"
 }
