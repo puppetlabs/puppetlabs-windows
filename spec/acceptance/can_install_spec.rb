@@ -1,20 +1,26 @@
 require 'spec_helper_acceptance'
 require 'fileutils'
 
+# rubocop:disable RSpec/InstanceVariable
+
+def project_root
+  File.expand_path(File.join(File.dirname(__FILE__), '..', '..'))
+end
+
 describe 'Windows module can be installed' do
   before(:all) do
-    pkg_dir = File.join($proj_root, 'pkg')
+    pkg_dir = File.join(project_root, 'pkg')
     # Clear the module packaging directory
     FileUtils.rm_rf(pkg_dir)
 
     # Build the Windows module tarball
-    Dir.chdir($proj_root) do
-      %x( puppet module build )
+    Dir.chdir(project_root) do
+      `puppet module build`
     end
 
     # Get the name of the new tarball
     @module_tarball = Dir.glob(File.join(pkg_dir, '*.tar.gz')).first
-    raise "Failed to build the Windows module locally" if @module_tarball.nil?
+    raise 'Failed to build the Windows module locally' if @module_tarball.nil?
   end
 
   it 'can install with dependencies satisfied' do
@@ -28,13 +34,13 @@ describe 'Windows module can be installed' do
       on(host, puppet("module install #{tmp_path}"))
 
       # Make sure it's installed
-      on(host, puppet("module list")) do |result|
-        expect(result.stdout).to match(/puppetlabs-windows/)
+      on(host, puppet('module list')) do |result|
+        expect(result.stdout).to match(%r{puppetlabs-windows})
       end
 
       # Make sure there were no dependency issues
-      on(host, puppet("module list")) do |result|
-        expect(result.stderr).to_not match(/Missing dependency/)
+      on(host, puppet('module list')) do |result|
+        expect(result.stderr).not_to match(%r{Missing dependency})
       end
     end
   end
