@@ -1,3 +1,14 @@
+## 2018-07-25 - Release 6.0.0
+### Summary
+
+Update module for Puppet 5 and convert to PDK format
+
+- Converted the module to PDK format ([MODULES-7047](https://tickets.puppetlabs.com/browse/MODULES-7047))
+- Added acceptance tests ([MODULES-7029](https://tickets.puppetlabs.com/browse/MODULES-7029))
+- Added Windows Server 2016 to supported operating systems ([MODULES-4271](https://tickets.puppetlabs.com/browse/MODULES-4271))
+- Update reboot module to reflect the release of version 2.0
+- Update the module and puppet versions for Puppet 5
+
 ## 2017-06-13 - Release 5.0.0
 ### Summary
 
