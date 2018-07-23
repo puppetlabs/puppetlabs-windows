@@ -8,6 +8,7 @@ Update module for Puppet 5 and convert to PDK format
 - Added Windows Server 2016 to supported operating systems ([MODULES-4271](https://tickets.puppetlabs.com/browse/MODULES-4271))
 - Update reboot module to reflect the release of version 2.0
 - Update the module and puppet versions for Puppet 5
+- Update chocolatey module to the latest ([MODULES-7521](https://tickets.puppetlabs.com/browse/MODULES-7521))
 
 ## 2017-06-13 - Release 5.0.0
 ### Summary
