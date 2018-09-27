@@ -42,7 +42,12 @@ group :system_tests do
   gem "puppet-blacksmith", '~> 3.4',                                                         require: false
 end
 
-puppet_version = ENV['PUPPET_GEM_VERSION']
+# Pinning to this version because the `puppet module build` command has been
+# removed from Puppet 6. PDK is intended to take over this functionality, but
+# the current version of it (1.7.1) has issues that make it difficult to use
+# its replacement `pdk biuld`. This pinning should be removed when PDK has
+# been updated to make this easier.
+puppet_version = ENV['PUPPET_GEM_VERSION'] || '5.5.6'
 puppet_type = gem_type(puppet_version)
 facter_version = ENV['FACTER_GEM_VERSION']
 hiera_version = ENV['HIERA_GEM_VERSION']
