@@ -1,22 +1,15 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 def location_for(place_or_version, fake_version = nil)
-  if place_or_version =~ %r{\A(git[:@][^#]*)#(.*)}
-    [fake_version, { git: Regexp.last_match(1), branch: Regexp.last_match(2), require: false }].compact
-  elsif place_or_version =~ %r{\Afile:\/\/(.*)}
-    ['>= 0', { path: File.expand_path(Regexp.last_match(1)), require: false }]
+  git_url_regex = %r{\A(?<url>(https?|git)[:@][^#]*)(#(?<branch>.*))?}
+  file_url_regex = %r{\Afile:\/\/(?<path>.*)}
+
+  if place_or_version && (git_url = place_or_version.match(git_url_regex))
+    [fake_version, { git: git_url[:url], branch: git_url[:branch], require: false }].compact
+  elsif place_or_version && (file_url = place_or_version.match(file_url_regex))
+    ['>= 0', { path: File.expand_path(file_url[:path]), require: false }]
   else
     [place_or_version, { require: false }]
-  end
-end
-
-def gem_type(place_or_version)
-  if place_or_version =~ %r{\Agit[:@]}
-    :git
-  elsif !place_or_version.nil? && place_or_version.start_with?('file:')
-    :file
-  else
-    :gem
   end
 end
 
@@ -35,20 +28,14 @@ group :development do
   gem "puppet-module-win-dev-r#{minor_version}",       require: false, platforms: [:mswin, :mingw, :x64_mingw]
 end
 group :system_tests do
-  gem "puppet-module-posix-system-r#{minor_version}",                                        require: false, platforms: [:ruby]
-  gem "puppet-module-win-system-r#{minor_version}",                                          require: false, platforms: [:mswin, :mingw, :x64_mingw]
-  gem "beaker-testmode_switcher", '~> 0.4',                                                  require: false
-  gem "master_manipulator",                                                                  require: false
-  gem "puppet-blacksmith", '~> 3.4',                                                         require: false
+  gem "puppet-module-posix-system-r#{minor_version}", require: false, platforms: [:ruby]
+  gem "puppet-module-win-system-r#{minor_version}",   require: false, platforms: [:mswin, :mingw, :x64_mingw]
+  gem "beaker-testmode_switcher", '~> 0.4',           require: false
+  gem "master_manipulator",                           require: false
+  gem "puppet-blacksmith", '~> 3.4',                  require: false
 end
 
-# Pinning to this version because the `puppet module build` command has been
-# removed from Puppet 6. PDK is intended to take over this functionality, but
-# the current version of it (1.7.1) has issues that make it difficult to use
-# its replacement `pdk biuld`. This pinning should be removed when PDK has
-# been updated to make this easier.
-puppet_version = ENV['PUPPET_GEM_VERSION'] || '5.5.6'
-puppet_type = gem_type(puppet_version)
+puppet_version = ENV['PUPPET_GEM_VERSION']
 facter_version = ENV['FACTER_GEM_VERSION']
 hiera_version = ENV['HIERA_GEM_VERSION']
 
