@@ -1,3 +1,15 @@
+## 2018-11-26 - Release 6.1.0
+### Summary
+
+Update module to use PDK.
+Update support for PE version 6.
+Update acl module to the 3.x branch.
+Update chocolatey module to the 4.x branch.
+Update dsc module to the 3.x branch.
+Update download_file module to the 4.x branch.
+Update windows_env module to the 4.x branch.
+Update windows_feature module to the 4.x branch.
+
 ## 2017-06-13 - Release 5.0.0
 ### Summary
 
