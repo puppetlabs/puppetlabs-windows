@@ -73,3 +73,7 @@ You can find even more great modules by [searching for windows]. Here are a few 
 
 These modules are not part of this pack nor are they Puppet Approved or Puppet Supported.
 But, every Forge module now offers [quality and community ratings](http://puppet.com/blog/new-ratings-puppet-forge-modules) to help you choose the best module for your need.
+
+## Contributing
+
+If you would like to contribute to this module, please follow the rules in the [CONTRIBUTING.md](https://github.com/puppetlabs/puppetlabs-windows/blob/master/CONTRIBUTING.md). For more information, see our [module contribution guide.](https://puppet.com/docs/puppet/latest/contributing.html)
