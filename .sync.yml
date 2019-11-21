@@ -25,3 +25,5 @@ Rakefile:
   - puppet-lint/tasks/puppet-lint
 spec/default_facts.yml:
   unmanaged: true
+spec/spec_helper.rb:
+  coverage_report: true
