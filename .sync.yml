@@ -2,9 +2,9 @@
 ".gitlab-ci.yml":
   delete: true
 ".travis.yml":
-  unmanaged: true
+  delete: true
 appveyor.yml:
-  unmanaged: true
+  delete: true
 Gemfile:
   required:
     ":system_tests":
