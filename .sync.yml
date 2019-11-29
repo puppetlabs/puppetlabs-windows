@@ -1,31 +1,27 @@
 ---
+".gitlab-ci.yml":
+  delete: true
+".travis.yml":
+  delete: true
+appveyor.yml:
+  delete: true
 Gemfile:
   required:
-    ':system_tests':
-      - gem: 'puppet-module-posix-system-r#{minor_version}'
-        platforms: ruby
-      - gem: 'puppet-module-win-system-r#{minor_version}'
-        platforms:
-          - mswin
-          - mingw
-          - x64_mingw
-      - gem: beaker-testmode_switcher
-        version: '~> 0.4'
-      - gem: master_manipulator
-      - gem: puppet-blacksmith
-        version: '~> 3.4'
-
-appveyor.yml:
-  unmanaged: true
-.travis.yml:
-  unmanaged: true
-
-.gitlab-ci.yml:
-  delete: true
-
+    ":system_tests":
+    - gem: puppet-module-posix-system-r#{minor_version}
+      platforms: ruby
+    - gem: puppet-module-win-system-r#{minor_version}
+      platforms:
+      - mswin
+      - mingw
+      - x64_mingw
+    - gem: beaker-testmode_switcher
+      version: "~> 0.4"
+    - gem: master_manipulator
+    - gem: puppet-blacksmith
+      version: "~> 3.4"
 Rakefile:
   requires:
-    - puppet-lint/tasks/puppet-lint
-
-spec/default_facts.yml:
-  unmanaged: true
+  - puppet-lint/tasks/puppet-lint
+spec/spec_helper.rb:
+  coverage_report: true
