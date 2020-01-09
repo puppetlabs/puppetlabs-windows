@@ -20,6 +20,9 @@ Gemfile:
     - gem: master_manipulator
     - gem: puppet-blacksmith
       version: "~> 3.4"
+  optional:
+    ":development":
+    - gem: ruby-pwsh
 Rakefile:
   requires:
   - puppet-lint/tasks/puppet-lint
