@@ -1,3 +1,8 @@
+## 2020-03-31 - Release 999.999.999
+### Summary
+
+This release is the deprecation and end of life for this module.
+
 ## 2018-11-26 - Release 6.1.0
 ### Summary
 
