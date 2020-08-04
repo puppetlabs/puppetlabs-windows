@@ -7,7 +7,9 @@
   "source": "https://github.com/puppetlabs/puppetlabs-windows",
   "project_page": "https://github.com/puppetlabs/puppetlabs-windows",
   "issues_url": "https://tickets.puppet.com/browse/MODULES",
-  "dependencies": [],
+  "dependencies": [
+
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Windows",
@@ -29,7 +31,7 @@
       "version_requirement": ">= 5.5.10 < 7.0.0"
     }
   ],
-  "pdk-version": "1.17.0",
+  "pdk-version": "1.18.1",
   "template-url": "https://github.com/puppetlabs/pdk-templates#master",
-  "template-ref": "heads/master-0-g095317c"
+  "template-ref": "heads/master-0-gd610ead"
 }
